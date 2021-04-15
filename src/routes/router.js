@@ -1,5 +1,5 @@
 const express = require('express');
-const linkHeroku = 'https://git.heroku.com/polar-ocean-27430.gitgi';
+const linkHeroku = 'https://git.heroku.com/polar-ocean-27430.git';
 const controller = require('../controller/controller')
 const router = express.Router();
 

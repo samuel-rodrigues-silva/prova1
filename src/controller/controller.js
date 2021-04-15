@@ -5,18 +5,18 @@ const listAll = (req,res) => {
     res.status(200).send(values);
 };
 const fetchCpf = (req,res) => {
-    const body = req.body;
     Array.from(my_database.values()).forEach(element => {
-        if(element['cpf'] == req.body){
+    const body = req.body;
+        if(element['cpfTitular'] == req.body){
             res.status(200).send(element);
         }
     });
 }
 
 const fetchDependents = (req,res) => {
-    const body = req.body;
     Array.from(my_database.values()).forEach(element => {
-        if(element['cpfTitular'] == req.body){
+    const body = req.body;
+        if(element['cpf'] == req.body){
             res.status(200).send(element);
         }
     });
@@ -24,7 +24,7 @@ const fetchDependents = (req,res) => {
 
 const create = (req,res) => {
     const body = req.body;
-    my_database.set(body.id,body);
+    my_database.set(body.cpf,body);
     res.status(201).send(body)
 }
 
